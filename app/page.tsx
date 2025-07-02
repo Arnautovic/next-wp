@@ -75,6 +75,18 @@ const ToDelete = () => {
           icon={<Diamond className="text-primary" size={30} />}
         />
       </section>
+
+
+      <section className="pt-20">
+  <div className="container mx-auto px-4 text-center space-y-6">
+    <h2 className="text-3xl font-bold">What Our Clients Say</h2>
+    <div className="flex justify-center">
+      <div className="elfsight-app-0cc6df41-f708-43b1-abe9-482074467b55" data-elfsight-app-lazy></div>
+    </div>
+  </div>
+</section>
+
+
     </main>
   );
 };
