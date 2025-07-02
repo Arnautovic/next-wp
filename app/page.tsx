@@ -68,9 +68,9 @@ const ToDelete = () => {
 
       {/* Usluge */}
 
-      <style>body {background: red;}</style>
+      <style>body {background: red;}  </style> da li radi
       <section className="grid md:grid-cols-3 gap-6 text-left">
-        <ServiceCard
+        <ServiceCard 
           title="WordPress & PHP"
           description="Custom plugins, headless CMS, and advanced integrations built for performance and flexibility."
           icon={<Pen className="text-primary" size={28} />}
