@@ -5,11 +5,10 @@ import Balancer from "react-wrap-balancer";
 // Next.js
 import Image from "next/image";
 
-// Ikone (po želji)
+// Ikone
 import { WordPressIcon } from "@/components/icons/wordpress";
 import { NextJsIcon } from "@/components/icons/nextjs";
 
-// Home stranica
 export default function Home() {
   return (
     <Section className="bg-background text-foreground">
@@ -20,11 +19,11 @@ export default function Home() {
   );
 }
 
-// Hero komponenta
+// Hero sekcija
 const Hero = () => {
   return (
-    <div className="text-center space-y-8">
-      {/* Ikone WordPress i Next.js */}
+    <div className="text-center space-y-10">
+      {/* Ikone */}
       <div className="flex justify-center gap-4">
         <WordPressIcon className="text-primary" width={36} height={36} />
         <NextJsIcon className="text-primary" width={36} height={36} />
@@ -35,10 +34,14 @@ const Hero = () => {
         <Balancer>Welcome to ArnautCode — Tailored Web Solutions</Balancer>
       </h1>
 
-      {/* Podnaslov */} 
+      {/* Podnaslov */}
       <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-        Hello! 👋 I'm <strong>Marko Arnautovic</strong>, a top-rated developer and verified partner on <strong>Upwork</strong> and <strong>Freelancer.com</strong>.
-        We specialize in high-performance web development — WordPress, custom plugins, theme development, security, speed optimization, and fixing all bugs.
+        Hello! 👋 I'm <strong>Marko Arnautovic</strong>, a top-rated developer
+        and verified partner on <strong>Upwork</strong> and{" "}
+        <strong>Freelancer.com</strong>. <br />
+        We specialize in high-performance web development — WordPress, custom
+        plugins, theme development, security, speed optimization, and fixing
+        all bugs.
       </p>
 
       {/* Usluge */}
@@ -46,24 +49,29 @@ const Hero = () => {
         <ServiceCard
           title="Custom PHP & WordPress"
           desc="From unique plugin logic to deeply customized themes and headless CMS integration."
-          img="/demo/php-wordpress.jpg"
+          img="https://via.placeholder.com/600x300?text=Custom+PHP"
         />
         <ServiceCard
           title="Malware Removal & Bug Fixing"
           desc="Urgent issues resolved quickly. We fix what others break — and make it better."
-          img="/demo/malware-fix.jpg"
+          img="https://via.placeholder.com/600x300?text=Fix+Issues"
         />
         <ServiceCard
           title="Web Design & Speed Optimization"
           desc="Elegant, blazing-fast websites crafted for performance and conversions."
-          img="/demo/speed-design.jpg"
+          img="https://via.placeholder.com/600x300?text=Design+%26+Speed"
         />
       </div>
 
       {/* Zaključak */}
       <p className="text-muted-foreground text-base max-w-xl mx-auto mt-10">
-        What we do is not just our work; it’s our passion. That’s why we have long-term clients with whom we’ve been collaborating for years. <br />
-        <span className="text-foreground font-semibold">If you have an urgent problem, we can fix it very quickly. Whatever you need for the web — we can do it.</span>
+        What we do is not just our work; it’s our passion. That’s why we have
+        long-term clients with whom we’ve been collaborating for years.
+        <br />
+        <span className="text-foreground font-semibold">
+          If you have an urgent problem, we can fix it very quickly. Whatever
+          you need for the web — we can do it.
+        </span>
       </p>
 
       {/* CTA dugme */}
@@ -79,7 +87,7 @@ const Hero = () => {
   );
 };
 
-// Kartica usluge sa slikom
+// Kartica za uslugu
 const ServiceCard = ({
   title,
   desc,
@@ -91,12 +99,13 @@ const ServiceCard = ({
 }) => {
   return (
     <div className="rounded-xl overflow-hidden shadow-lg bg-card hover:shadow-xl transition-shadow">
-      <div className="relative h-40 w-full">
+      <div className="w-full h-auto">
         <Image
           src={img}
           alt={title}
-          fill
-          className="object-cover"
+          width={600}
+          height={300}
+          className="object-cover w-full h-auto"
         />
       </div>
       <div className="p-5">
