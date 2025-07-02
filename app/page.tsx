@@ -84,6 +84,75 @@ const ToDelete = () => {
           icon={<Diamond className="text-primary" size={28} />}
         />
       </section>
+
+
+
+      <section className="pt-20">
+  <div className="container mx-auto px-4 text-center space-y-10">
+    <h2 className="text-3xl font-bold">What Our Clients Say</h2>
+
+    <div className="grid gap-6 md:grid-cols-3">
+      {[
+        {
+          name: "Sarah L.",
+          role: "eCommerce Founder",
+          text: "Marko exceeded our expectations. Our WordPress store is faster and cleaner than ever. Truly a partner we trust.",
+        },
+        {
+          name: "David M.",
+          role: "Agency Owner",
+          text: "Quick, professional, and proactive! He cleaned malware and optimized the site speed in no time. Highly recommended!",
+        },
+        {
+          name: "Ana R.",
+          role: "Marketing Manager",
+          text: "Reliable, responsive, and talented — exactly what we needed for our custom plugin project. 10/10!",
+        },
+      ].map((testimonial, i) => (
+        <div
+          key={i}
+          className="bg-background border border-border p-6 rounded-2xl text-left shadow-md hover:shadow-lg transition-all"
+        >
+          {/* Google logo */}
+          <div className="flex items-center gap-2 mb-4">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+              alt="Google"
+              className="w-5 h-5"
+            />
+            <span className="font-medium text-sm text-muted-foreground">Google Review</span>
+          </div>
+
+          {/* Zvezdice */}
+          <div className="flex gap-1 text-yellow-400 mb-3">
+            {Array(5)
+              .fill(0)
+              .map((_, i) => (
+                <svg
+                  key={i}
+                  className="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.18c.969 0 1.371 1.24.588 1.81l-3.387 2.46a1 1 0 00-.364 1.118l1.286 3.966c.3.922-.755 1.688-1.54 1.118l-3.386-2.46a1 1 0 00-1.175 0l-3.387 2.46c-.783.57-1.838-.196-1.539-1.118l1.286-3.966a1 1 0 00-.364-1.118L2.05 9.394c-.783-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.967z" />
+                </svg>
+              ))}
+          </div>
+
+          {/* Tekst */}
+          <p className="text-muted-foreground mb-4">&ldquo;{testimonial.text}&rdquo;</p>
+
+          {/* Autor */}
+          <div className="font-semibold">{testimonial.name}</div>
+          <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+
+
     </main>
   );
 };
