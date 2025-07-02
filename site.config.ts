@@ -5,7 +5,7 @@ type SiteConfig = {
 };
 
 export const siteConfig: SiteConfig = {
-  site_name: "Fast site by arnautcode",
+  site_name: "Creative Minds. Powerful Code.",
   site_description: "Fast Wordpress theme for presentation. ",
   site_domain: "https://arnautcode.com",
 };
