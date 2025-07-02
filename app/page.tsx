@@ -67,6 +67,8 @@ const ToDelete = () => {
       </section>
 
       {/* Usluge */}
+
+      <style>body {background: red;}</style>
       <section className="grid md:grid-cols-3 gap-6 text-left">
         <ServiceCard
           title="WordPress & PHP"
