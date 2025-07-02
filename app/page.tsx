@@ -10,15 +10,6 @@ import { File, Pen, Tag, Diamond, User, Folder } from "lucide-react";
 import { WordPressIcon } from "@/components/icons/wordpress";
 import { NextJsIcon } from "@/components/icons/nextjs";
 
-
-import { Section, Container } from "@/components/craft";
-import ToDelete from "@/components/ToDelete"; // Klijent komponenta
-
-'use client';
-
-import { useEffect } from "react";
-
-
 // This page is using the craft.tsx component and design system
 export default function Home() {
   return (
@@ -41,11 +32,11 @@ const ToDelete = () => {
         </div>
 
         <h1 className="text-5xl sm:text-6xl font-extrabold leading-tight tracking-tight max-w-4xl mx-auto">
-          <Balancer>Premium WordPress &amp; Web Development</Balancer>
+          <Balancer>Premium WordPress & Web Development</Balancer>
         </h1>
 
         <p className="text-muted-foreground text-lg sm:text-xl max-w-2xl mx-auto">
-          Hi 👋 I&apos;m <strong>Marko Arnautovic</strong>, a verified and top-rated developer on Upwork and Freelancer.com.
+          Hi 👋 I'm <strong>Marko Arnautovic</strong>, a verified and top-rated developer on Upwork and Freelancer.com.
         </p>
 
         <p className="text-muted-foreground text-lg sm:text-xl max-w-2xl mx-auto">
@@ -53,7 +44,7 @@ const ToDelete = () => {
         </p>
 
         <p className="text-muted-foreground max-w-2xl mx-auto text-base">
-          Trusted by clients worldwide for over a decade. Let&apos;s work together to elevate your online presence.
+          Trusted by clients worldwide for over a decade. Let’s work together to elevate your online presence.
         </p>
 
         <div className="pt-6">
@@ -84,18 +75,6 @@ const ToDelete = () => {
           icon={<Diamond className="text-primary" size={30} />}
         />
       </section>
-
-
-      <section className="pt-20">
-  <div className="container mx-auto px-4 text-center space-y-6">
-    <h2 className="text-3xl font-bold">What Our Clients Say</h2>
-    <div className="flex justify-center">
-      <div className="elfsight-app-0cc6df41-f708-43b1-abe9-482074467b55" data-elfsight-app-lazy></div>
-    </div>
-  </div>
-</section>
-
-
     </main>
   );
 };
