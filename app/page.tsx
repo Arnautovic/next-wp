@@ -35,7 +35,7 @@ const ToDelete = () => {
         {/* Naslov */}
         <h1 className="text-4xl sm:text-5xl font-bold tracking-tight leading-tight max-w-4xl mx-auto">
           <Balancer>
-            Welcome to ArnautCode — Custom WordPress & Web Solutions
+            Custom WordPress & Web Solutions
           </Balancer>
         </h1>
 
