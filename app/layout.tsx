@@ -81,7 +81,7 @@ const Nav = ({ className, children, id }: NavProps) => {
             width={42}
             height={26.44}
           ></Image>
-          <h2 className="text-sm">{siteConfig.site_name}</h2>
+          <h2 className="text-sm">{siteConfig.site_name} lockedcode</h2>
         </Link>
         {children}
         <div className="flex items-center gap-2">
