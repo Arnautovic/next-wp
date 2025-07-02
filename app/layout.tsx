@@ -13,7 +13,7 @@ import { siteConfig } from "@/site.config";
 import { cn } from "@/lib/utils";
 
 import Balancer from "react-wrap-balancer";
-import Logo from "@/public/arnaucode-logo.svg";
+import Logo from "@/public/arnautcode-logo.svg";
 import Image from "next/image";
 import Link from "next/link";
 
