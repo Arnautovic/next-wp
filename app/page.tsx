@@ -1,11 +1,25 @@
-// Imports
-import { useEffect } from "react";
-import { Section, Container } from "@/components/craft";
+// Craft Imports
+import { Section, Container, Prose } from "@/components/craft";
 import Balancer from "react-wrap-balancer";
+
+// Next.js Imports
+import Link from "next/link";
+
+// Icons
+import { File, Pen, Tag, Diamond, User, Folder } from "lucide-react";
 import { WordPressIcon } from "@/components/icons/wordpress";
 import { NextJsIcon } from "@/components/icons/nextjs";
-import { Pen, Folder, Diamond } from "lucide-react";
 
+
+import { Section, Container } from "@/components/craft";
+import ToDelete from "@/components/ToDelete"; // Klijent komponenta
+
+'use client';
+
+import { useEffect } from "react";
+
+
+// This page is using the craft.tsx component and design system
 export default function Home() {
   return (
     <Section>
@@ -17,13 +31,6 @@ export default function Home() {
 }
 
 const ToDelete = () => {
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://static.elfsight.com/platform/platform.js";
-    script.async = true;
-    document.body.appendChild(script);
-  }, []);
-
   return (
     <main className="space-y-20">
       {/* Hero Sekcija */}
@@ -78,21 +85,21 @@ const ToDelete = () => {
         />
       </section>
 
-      {/* Google Reviews */}
+
       <section className="pt-20">
-        <div className="container mx-auto px-4 text-center space-y-6">
-          <h2 className="text-3xl font-bold">What Our Clients Say</h2>
-          <div className="flex justify-center">
-            <div
-              className="elfsight-app-0cc6df41-f708-43b1-abe9-482074467b55"
-              data-elfsight-app-lazy
-            ></div>
-          </div>
-        </div>
-      </section>
+  <div className="container mx-auto px-4 text-center space-y-6">
+    <h2 className="text-3xl font-bold">What Our Clients Say</h2>
+    <div className="flex justify-center">
+      <div className="elfsight-app-0cc6df41-f708-43b1-abe9-482074467b55" data-elfsight-app-lazy></div>
+    </div>
+  </div>
+</section>
+
+
     </main>
   );
 };
+
 
 const ServiceCard = ({
   title,
@@ -111,3 +118,4 @@ const ServiceCard = ({
     </div>
   );
 };
+
