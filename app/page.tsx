@@ -32,11 +32,11 @@ const ToDelete = () => {
         </div>
 
         <h1 className="text-5xl sm:text-6xl font-extrabold leading-tight tracking-tight max-w-4xl mx-auto">
-          <Balancer>Premium WordPress & Web Development</Balancer>
+          <Balancer>Premium WordPress &amp; Web Development</Balancer>
         </h1>
 
         <p className="text-muted-foreground text-lg sm:text-xl max-w-2xl mx-auto">
-          Hi 👋 I'm <strong>Marko Arnautovic</strong>, a verified and top-rated developer on Upwork and Freelancer.com.
+          Hi 👋 I&apos;m <strong>Marko Arnautovic</strong>, a verified and top-rated developer on Upwork and Freelancer.com.
         </p>
 
         <p className="text-muted-foreground text-lg sm:text-xl max-w-2xl mx-auto">
@@ -44,7 +44,7 @@ const ToDelete = () => {
         </p>
 
         <p className="text-muted-foreground max-w-2xl mx-auto text-base">
-          Trusted by clients worldwide for over a decade. Let’s work together to elevate your online presence.
+          Trusted by clients worldwide for over a decade. Let&apos;s work together to elevate your online presence.
         </p>
 
         <div className="pt-6">
