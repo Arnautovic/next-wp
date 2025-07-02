@@ -35,7 +35,7 @@ const Hero = () => {
         <Balancer>Welcome to ArnautCode — Tailored Web Solutions</Balancer>
       </h1>
 
-      {/* Podnaslov */}
+      {/* Podnaslov */} 
       <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
         Hello! 👋 I'm <strong>Marko Arnautovic</strong>, a top-rated developer and verified partner on <strong>Upwork</strong> and <strong>Freelancer.com</strong>.
         We specialize in high-performance web development — WordPress, custom plugins, theme development, security, speed optimization, and fixing all bugs.
