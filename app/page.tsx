@@ -1,149 +1,108 @@
 // Craft Imports
-import { Section, Container, Prose } from "@/components/craft";
+import { Section, Container } from "@/components/craft";
 import Balancer from "react-wrap-balancer";
 
-// Next.js Imports
-import Link from "next/link";
+// Next.js
+import Image from "next/image";
 
-// Icons
-import { File, Pen, Tag, Diamond, User, Folder } from "lucide-react";
+// Ikone (po želji)
 import { WordPressIcon } from "@/components/icons/wordpress";
 import { NextJsIcon } from "@/components/icons/nextjs";
 
-// This page is using the craft.tsx component and design system
+// Home stranica
 export default function Home() {
   return (
-    <Section>
+    <Section className="bg-background text-foreground">
       <Container>
-        <ToDelete />
+        <Hero />
       </Container>
     </Section>
   );
 }
 
-// This is just some example TSX
-const ToDelete = () => {
+// Hero komponenta
+const Hero = () => {
   return (
-    <main className="space-y-6">
-      <Prose>
-        <h1>
-          <Balancer>Headless WordPress built with the Next.js</Balancer>
-        </h1>
-
-        <p>
-          This is <a href="https://github.com/9d8dev/next-wp">next-wp</a>,
-          created as a way to build WordPress sites with Next.js at rapid speed.
-          This starter is designed with{" "}
-          <a href="https://ui.shadcn.com">shadcn/ui</a>,{" "}
-          <a href="https://craft-ds.com">craft-ds</a>, and Tailwind CSS. Use{" "}
-          <a href="https://components.work">brijr/components</a> to build your
-          site with prebuilt components. The data fetching and typesafety is
-          handled in <code>lib/wordpress.ts</code> and{" "}
-          <code>lib/wordpress.d.ts</code>.
-        </p>
-      </Prose>
-
-      <div className="flex justify-between items-center gap-4">
-        {/* Vercel Clone Starter */}
-        <div className="flex items-center gap-3">
-          <a
-            className="h-auto block"
-            href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2F9d8dev%2Fnext-wp&env=WORDPRESS_URL,WORDPRESS_HOSTNAME&envDescription=Add%20WordPress%20URL%20with%20Rest%20API%20enabled%20(ie.%20https%3A%2F%2Fwp.example.com)%20abd%20the%20hostname%20for%20Image%20rendering%20in%20Next%20JS%20(ie.%20wp.example.com)&project-name=next-wp&repository-name=next-wp&demo-title=Next%20JS%20and%20WordPress%20Starter&demo-url=https%3A%2F%2Fwp.9d8.dev"
-          >
-            {/* eslint-disable-next-line */}
-            <img
-              className="not-prose my-4"
-              src="https://vercel.com/button"
-              alt="Deploy with Vercel"
-              width={105}
-              height={32.62}
-            />
-          </a>
-          <p className="!text-sm sr-only sm:not-sr-only text-muted-foreground">
-            Deploy with Vercel in seconds.
-          </p>
-        </div>
-
-        <div className="flex gap-2 items-center">
-          <WordPressIcon className="text-foreground" width={32} height={32} />
-          <NextJsIcon className="text-foreground" width={32} height={32} />
-        </div>
+    <div className="text-center space-y-8">
+      {/* Ikone WordPress i Next.js */}
+      <div className="flex justify-center gap-4">
+        <WordPressIcon className="text-primary" width={36} height={36} />
+        <NextJsIcon className="text-primary" width={36} height={36} />
       </div>
 
-      <div className="grid md:grid-cols-3 gap-4 mt-6">
-        <Link
-          className="border h-48 bg-accent/50 rounded-lg p-4 flex flex-col justify-between hover:scale-[1.02] transition-all"
-          href="/posts"
-        >
-          <Pen size={32} />
-          <span>
-            Posts{" "}
-            <span className="block text-sm text-muted-foreground">
-              All posts from your WordPress
-            </span>
-          </span>
-        </Link>
-        <Link
-          className="border h-48 bg-accent/50 rounded-lg p-4 flex flex-col justify-between hover:scale-[1.02] transition-all"
-          href="/pages"
-        >
-          <File size={32} />
-          <span>
-            Pages{" "}
-            <span className="block text-sm text-muted-foreground">
-              Custom pages from your WordPress
-            </span>
-          </span>
-        </Link>
-        <Link
-          className="border h-48 bg-accent/50 rounded-lg p-4 flex flex-col justify-between hover:scale-[1.02] transition-all"
-          href="/posts/authors"
-        >
-          <User size={32} />
-          <span>
-            Authors{" "}
-            <span className="block text-sm text-muted-foreground">
-              List of the authors from your WordPress
-            </span>
-          </span>
-        </Link>
-        <Link
-          className="border h-48 bg-accent/50 rounded-lg p-4 flex flex-col justify-between hover:scale-[1.02] transition-all"
-          href="/posts/tags"
-        >
-          <Tag size={32} />
-          <span>
-            Tags{" "}
-            <span className="block text-sm text-muted-foreground">
-              Content by tags from your WordPress
-            </span>
-          </span>
-        </Link>
-        <Link
-          className="border h-48 bg-accent/50 rounded-lg p-4 flex flex-col justify-between hover:scale-[1.02] transition-all"
-          href="/posts/categories"
-        >
-          <Diamond size={32} />
-          <span>
-            Categories{" "}
-            <span className="block text-sm text-muted-foreground">
-              Categories from your WordPress
-            </span>
-          </span>
-        </Link>
+      {/* Naslov */}
+      <h1 className="text-4xl sm:text-5xl font-bold tracking-tight max-w-3xl mx-auto leading-tight">
+        <Balancer>Welcome to ArnautCode — Tailored Web Solutions</Balancer>
+      </h1>
+
+      {/* Podnaslov */}
+      <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+        Hello! 👋 I'm <strong>Marko Arnautovic</strong>, a top-rated developer and verified partner on <strong>Upwork</strong> and <strong>Freelancer.com</strong>.
+        We specialize in high-performance web development — WordPress, custom plugins, theme development, security, speed optimization, and fixing all bugs.
+      </p>
+
+      {/* Usluge */}
+      <div className="grid md:grid-cols-3 gap-6 mt-10 text-left">
+        <ServiceCard
+          title="Custom PHP & WordPress"
+          desc="From unique plugin logic to deeply customized themes and headless CMS integration."
+          img="/demo/php-wordpress.jpg"
+        />
+        <ServiceCard
+          title="Malware Removal & Bug Fixing"
+          desc="Urgent issues resolved quickly. We fix what others break — and make it better."
+          img="/demo/malware-fix.jpg"
+        />
+        <ServiceCard
+          title="Web Design & Speed Optimization"
+          desc="Elegant, blazing-fast websites crafted for performance and conversions."
+          img="/demo/speed-design.jpg"
+        />
+      </div>
+
+      {/* Zaključak */}
+      <p className="text-muted-foreground text-base max-w-xl mx-auto mt-10">
+        What we do is not just our work; it’s our passion. That’s why we have long-term clients with whom we’ve been collaborating for years. <br />
+        <span className="text-foreground font-semibold">If you have an urgent problem, we can fix it very quickly. Whatever you need for the web — we can do it.</span>
+      </p>
+
+      {/* CTA dugme */}
+      <div className="mt-8">
         <a
-          className="border h-48 bg-accent/50 rounded-lg p-4 flex flex-col justify-between hover:scale-[1.02] transition-all"
-          href="https://github.com/9d8dev/next-wp/blob/main/README.md"
+          href="#contact"
+          className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-xl shadow hover:scale-[1.03] transition-transform font-semibold"
         >
-          <Folder size={32} />
-          <span>
-            Documentation{" "}
-            <span className="block text-sm text-muted-foreground">
-              How to use `next-wp`
-            </span>
-          </span>
+          FREE CONSULTATIONS
         </a>
       </div>
-    </main>
+    </div>
+  );
+};
+
+// Kartica usluge sa slikom
+const ServiceCard = ({
+  title,
+  desc,
+  img,
+}: {
+  title: string;
+  desc: string;
+  img: string;
+}) => {
+  return (
+    <div className="rounded-xl overflow-hidden shadow-lg bg-card hover:shadow-xl transition-shadow">
+      <div className="relative h-40 w-full">
+        <Image
+          src={img}
+          alt={title}
+          fill
+          className="object-cover"
+        />
+      </div>
+      <div className="p-5">
+        <h3 className="text-xl font-semibold mb-2">{title}</h3>
+        <p className="text-muted-foreground text-sm">{desc}</p>
+      </div>
+    </div>
   );
 };
