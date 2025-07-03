@@ -17,22 +17,43 @@ export default function Home() {
 }
 
 const HeroSection = () => (
-  <Section className="py-24 text-center bg-background text-foreground">
+  <Section className="py-24 bg-background text-foreground">
     <Container>
-      <h1 className="text-4xl md:text-6xl font-bold mb-4">
-        Marko Arnautovic – WordPress & Next.js Expert
-      </h1>
-      <p className="text-lg md:text-xl text-muted-foreground mb-6">
-        I create blazing fast, SEO-optimized websites with beautiful modern design and clean code.
-      </p>
-      <Button size="lg" asChild>
-        <Link href="#services" className="flex items-center gap-2">
-          View Services <ArrowRight size={16} />
-        </Link>
-      </Button>
+      <div className="grid md:grid-cols-2 gap-12 items-center">
+        {/* Leva strana – tekst */}
+        <div>
+          <p className="text-sm uppercase tracking-widest text-primary font-medium mb-4">
+            WordPress & Next.js Specialist
+          </p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+            Hi, I&apos;m Marko Arnautovic.
+            <br />
+            I build blazing-fast websites that perform.
+          </h1>
+          <p className="text-lg text-muted-foreground mb-6">
+            With over 12 years of experience, I develop custom WordPress and Next.js solutions for serious businesses.
+          </p>
+          <Button size="lg" asChild>
+            <Link href="#services">Explore My Services</Link>
+          </Button>
+        </div>
+
+        {/* Desna strana – slika */}
+        <div className="flex justify-center md:justify-end">
+          <Image
+            src="https://www.arnautcode.com/wp-content/uploads/2022/10/arnautcode-man.png"
+            alt="Marko Arnautovic"
+            width={400}
+            height={400}
+            className="rounded-2xl shadow-xl dark:shadow-white/10"
+            priority
+          />
+        </div>
+      </div>
     </Container>
   </Section>
 );
+
 
 const AboutSection = () => (
   <Section className="py-20 bg-background text-foreground">
