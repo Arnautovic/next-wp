@@ -20,7 +20,7 @@ export default function Home() {
 const HeroSection = () => (
   <Section className="py-24 bg-background text-foreground">
     <Container>
-      <div className="grid md:grid-cols-2 gap-12 items-center">
+    <div className="grid md:grid-cols-[3fr_2fr] gap-12 items-center">
         {/* Leva strana – tekst */}
         <div>
           <p className="text-sm uppercase tracking-widest text-primary font-medium mb-4">
@@ -44,7 +44,7 @@ const HeroSection = () => (
           <Image
             src="/arnautcode-man.png"
             alt="Marko Arnautovic"
-            width={200}
+            width={300}
             height={400}
             className="dark:shadow-white/10"
             priority
