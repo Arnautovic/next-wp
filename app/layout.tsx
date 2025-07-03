@@ -78,7 +78,7 @@ const Nav = ({ className, children, id }: NavProps) => {
             alt="Logo"
             loading="eager"
             className="dark:invert"
-            width={42}
+            width={65}
             height={26.44}
           ></Image>
           <h2 className="text-sm">{siteConfig.site_name}</h2>
