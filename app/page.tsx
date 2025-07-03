@@ -44,7 +44,7 @@ const HeroSection = () => (
           <Image
             src="/markoarnautovic.png"
             alt="Marko Arnautovic"
-            width={300}
+            width={400}
             height={400}
             className="dark:shadow-white/10"
             priority
