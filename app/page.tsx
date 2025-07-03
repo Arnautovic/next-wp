@@ -40,7 +40,7 @@ const AboutSection = () => (
       <div className="max-w-3xl mx-auto text-center">
         <h2 className="text-3xl font-bold mb-4">About Me</h2>
         <p className="text-muted-foreground text-lg">
-          I'm Marko Arnautovic, a WordPress developer with over 12 years of experience.
+          I&apos;m Marko Arnautovic, a WordPress developer with over 12 years of experience.
           I specialize in headless WordPress, custom plugin development, and high-performance websites built with Next.js.
         </p>
       </div>
@@ -111,7 +111,7 @@ const CTASection = () => (
   <Section className="py-24 bg-primary text-primary-foreground text-center">
     <Container>
       <h2 className="text-3xl md:text-4xl font-bold mb-4">
-        Let's build your next big project
+        Let&apos;s build your next big project
       </h2>
       <p className="text-lg mb-6">
         Contact me today to get started with a custom, high-performance website.
