@@ -42,7 +42,7 @@ const HeroSection = () => (
         {/* Desna strana – slika */}
         <div className="flex justify-center md:justify-end">
           <Image
-            src="/arnautcode-man.png"
+            src="/markoarnautovic.png"
             alt="Marko Arnautovic"
             width={300}
             height={400}
