@@ -13,7 +13,7 @@ import { siteConfig } from "@/site.config";
 import { cn } from "@/lib/utils";
 
 import Balancer from "react-wrap-balancer";
-import Logo from "@/public/arnautcode-logo.svg";
+import Logo from "@/public/logo.svg";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -95,7 +95,7 @@ const Nav = ({ className, children, id }: NavProps) => {
             ))}
           </div>
           <Button asChild className="hidden sm:flex">
-            <Link href="/contact">Free Consultation</Link>
+            <Link href="https://github.com/9d8dev/next-wp">Get Started</Link>
           </Button>
           <MobileNav />
         </div>
