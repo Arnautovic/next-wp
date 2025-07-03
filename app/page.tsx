@@ -3,7 +3,6 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle, Quote } from "lucide-react";
 import Image from "next/image";
-import heroimg from "@/public/arnautcode-man.png";
 
 
 export default function Home() {
@@ -43,7 +42,7 @@ const HeroSection = () => (
         {/* Desna strana – slika */}
         <div className="flex justify-center md:justify-end">
           <Image
-            src="{heroimg}"
+            src="/public/arnautcode-logo-min.png"
             alt="Marko Arnautovic"
             width={400}
             height={400}
