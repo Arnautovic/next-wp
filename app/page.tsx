@@ -1,149 +1,154 @@
-// Craft Imports
 import { Section, Container, Prose } from "@/components/craft";
-import Balancer from "react-wrap-balancer";
-
-// Next.js Imports
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, CheckCircle, Quote } from "lucide-react";
+import Image from "next/image";
 
-// Icons
-import { File, Pen, Tag, Diamond, User, Folder } from "lucide-react";
-import { WordPressIcon } from "@/components/icons/wordpress";
-import { NextJsIcon } from "@/components/icons/nextjs";
-
-// This page is using the craft.tsx component and design system
 export default function Home() {
   return (
-    <Section>
-      <Container>
-        <ToDelete />
-      </Container>
-    </Section>
+    <>
+      <HeroSection />
+      <AboutSection />
+      <ServicesSection />
+      <TestimonialsSection />
+      <BlogPreview />
+      <CTASection />
+    </>
   );
 }
 
-// This is just some example TSX
-const ToDelete = () => {
-  return (
-    <main className="space-y-6">
-      <Prose>
-        <h1>
-          <Balancer>Headless WordPress built with the Next.js</Balancer>
-        </h1>
+const HeroSection = () => (
+  <Section className="text-center py-24 bg-gradient-to-b from-gray-50 to-white">
+    <Container>
+      <h1 className="text-4xl md:text-6xl font-bold mb-4">
+        Vrhunski WordPress i Next.js razvoj
+      </h1>
+      <p className="text-xl text-muted-foreground mb-6">
+        Brzina. SEO. Dizajn. Sve što vaš projekat treba – mi razvijamo.
+      </p>
+      <Button size="lg">
+        <Link href="#usluge" className="flex items-center gap-2">
+          Pogledaj usluge <ArrowRight size={16} />
+        </Link>
+      </Button>
+    </Container>
+  </Section>
+);
 
-        <p>
-          This is <a href="https://github.com/9d8dev/next-wp">next-wp</a>,
-          created as a way to build WordPress sites with Next.js at rapid speed.
-          This starter is designed with{" "}
-          <a href="https://ui.shadcn.com">shadcn/ui</a>,{" "}
-          <a href="https://craft-ds.com">craft-ds</a>, and Tailwind CSS. Use{" "}
-          <a href="https://components.work">brijr/components</a> to build your
-          site with prebuilt components. The data fetching and typesafety is
-          handled in <code>lib/wordpress.ts</code> and{" "}
-          <code>lib/wordpress.d.ts</code>.
+const AboutSection = () => (
+  <Section className="py-20 bg-white">
+    <Container>
+      <div className="max-w-3xl mx-auto text-center">
+        <h2 className="text-3xl font-bold mb-4">O nama</h2>
+        <p className="text-muted-foreground text-lg">
+          Sa preko 12 godina iskustva u WordPress razvoju, radimo na projektima
+          koji zahtevaju preciznost, brzinu i sigurnost. Specijalizovani za
+          headless arhitekture i napredne funkcionalnosti.
         </p>
-      </Prose>
+      </div>
+    </Container>
+  </Section>
+);
 
-      <div className="flex justify-between items-center gap-4">
-        {/* Vercel Clone Starter */}
-        <div className="flex items-center gap-3">
-          <a
-            className="h-auto block"
-            href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2F9d8dev%2Fnext-wp&env=WORDPRESS_URL,WORDPRESS_HOSTNAME&envDescription=Add%20WordPress%20URL%20with%20Rest%20API%20enabled%20(ie.%20https%3A%2F%2Fwp.example.com)%20abd%20the%20hostname%20for%20Image%20rendering%20in%20Next%20JS%20(ie.%20wp.example.com)&project-name=next-wp&repository-name=next-wp&demo-title=Next%20JS%20and%20WordPress%20Starter&demo-url=https%3A%2F%2Fwp.9d8.dev"
+const ServicesSection = () => (
+  <Section id="usluge" className="py-20 bg-gray-50">
+    <Container>
+      <h2 className="text-3xl font-bold text-center mb-12">Naše usluge</h2>
+      <div className="grid md:grid-cols-3 gap-8">
+        {[
+          "Custom WordPress razvoj",
+          "Next.js frontend integracija",
+          "Plugin & API razvoj",
+          "WooCommerce rešenja",
+          "SEO optimizacija",
+          "Održavanje & podrška"
+        ].map((service, index) => (
+          <div
+            key={index}
+            className="p-6 bg-white rounded-2xl shadow hover:shadow-lg transition"
           >
-            {/* eslint-disable-next-line */}
-            <img
-              className="not-prose my-4"
-              src="https://vercel.com/button"
-              alt="Deploy with Vercel"
-              width={105}
-              height={32.62}
+            <CheckCircle className="text-green-600 mb-4" size={32} />
+            <h3 className="text-xl font-semibold">{service}</h3>
+          </div>
+        ))}
+      </div>
+    </Container>
+  </Section>
+);
+
+const TestimonialsSection = () => (
+  <Section className="py-20 bg-white">
+    <Container>
+      <h2 className="text-3xl font-bold text-center mb-12">Šta klijenti kažu</h2>
+      <div className="grid md:grid-cols-3 gap-6">
+        {[
+          {
+            name: "Sara J.",
+            quote: "Marko je neverovatan developer. Sve je bilo brzo, precizno i profesionalno.",
+          },
+          {
+            name: "Ivan D.",
+            quote: "Dobili smo sajt koji radi savršeno i izgleda moderno. Sve preporuke!",
+          },
+          {
+            name: "Anna L.",
+            quote: "Odlična komunikacija, sjajan kvalitet i brzina isporuke. Vraćamo se opet!",
+          },
+        ].map((item, i) => (
+          <div
+            key={i}
+            className="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition"
+          >
+            <Quote className="mb-2 text-muted-foreground" />
+            <p className="italic mb-4">{item.quote}</p>
+            <p className="font-semibold">{item.name}</p>
+          </div>
+        ))}
+      </div>
+    </Container>
+  </Section>
+);
+
+const BlogPreview = () => (
+  <Section className="py-20 bg-gray-50">
+    <Container>
+      <h2 className="text-3xl font-bold text-center mb-12">Najnoviji članci</h2>
+      <div className="grid md:grid-cols-3 gap-6">
+        {[1, 2, 3].map((id) => (
+          <div key={id} className="bg-white rounded-xl p-6 shadow hover:shadow-md">
+            <Image
+              src={`https://source.unsplash.com/random/800x600?sig=${id}`}
+              alt="Post"
+              width={600}
+              height={400}
+              className="rounded-md mb-4"
             />
-          </a>
-          <p className="!text-sm sr-only sm:not-sr-only text-muted-foreground">
-            Deploy with Vercel in seconds.
-          </p>
-        </div>
-
-        <div className="flex gap-2 items-center">
-          <WordPressIcon className="text-foreground" width={32} height={32} />
-          <NextJsIcon className="text-foreground" width={32} height={32} />
-        </div>
+            <h3 className="text-xl font-semibold mb-2">Naslov članka {id}</h3>
+            <p className="text-muted-foreground text-sm mb-4">
+              Kratak opis članka koji dolazi iz WordPress-a.
+            </p>
+            <Link href={`/blog/post-${id}`} className="text-blue-600 text-sm">
+              Pročitaj više →
+            </Link>
+          </div>
+        ))}
       </div>
+    </Container>
+  </Section>
+);
 
-      <div className="grid md:grid-cols-3 gap-4 mt-6">
-        <Link
-          className="border h-48 bg-accent/50 rounded-lg p-4 flex flex-col justify-between hover:scale-[1.02] transition-all"
-          href="/posts"
-        >
-          <Pen size={32} />
-          <span>
-            Posts{" "}
-            <span className="block text-sm text-muted-foreground">
-              All posts from your WordPress
-            </span>
-          </span>
-        </Link>
-        <Link
-          className="border h-48 bg-accent/50 rounded-lg p-4 flex flex-col justify-between hover:scale-[1.02] transition-all"
-          href="/pages"
-        >
-          <File size={32} />
-          <span>
-            Pages{" "}
-            <span className="block text-sm text-muted-foreground">
-              Custom pages from your WordPress
-            </span>
-          </span>
-        </Link>
-        <Link
-          className="border h-48 bg-accent/50 rounded-lg p-4 flex flex-col justify-between hover:scale-[1.02] transition-all"
-          href="/posts/authors"
-        >
-          <User size={32} />
-          <span>
-            Authors{" "}
-            <span className="block text-sm text-muted-foreground">
-              List of the authors from your WordPress
-            </span>
-          </span>
-        </Link>
-        <Link
-          className="border h-48 bg-accent/50 rounded-lg p-4 flex flex-col justify-between hover:scale-[1.02] transition-all"
-          href="/posts/tags"
-        >
-          <Tag size={32} />
-          <span>
-            Tags{" "}
-            <span className="block text-sm text-muted-foreground">
-              Content by tags from your WordPress
-            </span>
-          </span>
-        </Link>
-        <Link
-          className="border h-48 bg-accent/50 rounded-lg p-4 flex flex-col justify-between hover:scale-[1.02] transition-all"
-          href="/posts/categories"
-        >
-          <Diamond size={32} />
-          <span>
-            Categories{" "}
-            <span className="block text-sm text-muted-foreground">
-              Categories from your WordPress
-            </span>
-          </span>
-        </Link>
-        <a
-          className="border h-48 bg-accent/50 rounded-lg p-4 flex flex-col justify-between hover:scale-[1.02] transition-all"
-          href="https://github.com/9d8dev/next-wp/blob/main/README.md"
-        >
-          <Folder size={32} />
-          <span>
-            Documentation{" "}
-            <span className="block text-sm text-muted-foreground">
-              How to use `next-wp`
-            </span>
-          </span>
-        </a>
-      </div>
-    </main>
-  );
-};
+const CTASection = () => (
+  <Section className="py-24 bg-gradient-to-r from-blue-500 to-purple-600 text-white text-center">
+    <Container>
+      <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        Spreman za sledeći projekat?
+      </h2>
+      <p className="text-lg mb-6">
+        Kontaktirajte nas danas i zajedno ćemo napraviti nešto sjajno.
+      </p>
+      <Button variant="secondary" size="lg" asChild>
+        <Link href="/kontakt">Pošalji poruku</Link>
+      </Button>
+    </Container>
+  </Section>
+);
