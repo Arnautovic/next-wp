@@ -21,7 +21,7 @@ const HeroSection = () => (
   <Section className="text-center py-24 bg-gradient-to-b from-gray-50 to-white">
     <Container>
       <h1 className="text-4xl md:text-6xl font-bold mb-4">
-        Vrhunski WordPress i Next.js razvoj
+        Marko Arnautovic Web developer
       </h1>
       <p className="text-xl text-muted-foreground mb-6">
         Brzina. SEO. Dizajn. Sve što vaš projekat treba – mi razvijamo.
