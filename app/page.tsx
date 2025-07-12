@@ -3,144 +3,171 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle, Quote } from "lucide-react";
 import Image from "next/image";
-
+import { motion } from "framer-motion";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 export default function Home() {
   return (
     <>
-      <HeroSection />
-      <AboutSection />
-      <ServicesSection />
-      <TestimonialsSection />
-      <CTASection />
+      <Hero />
+      <About />
+      <Services />
+      <Testimonials />
+      <CTA />
     </>
   );
 }
 
-const HeroSection = () => (
-  <Section className="py-24 bg-background text-foreground">
+const Hero = () => (
+  <Section className="py-32 bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
     <Container>
-    <div className="grid md:grid-cols-[3fr_2fr] gap-12 items-center">
-        {/* Leva strana – tekst */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="grid md:grid-cols-[3fr_2fr] gap-12 items-center"
+      >
         <div>
-          <p className="text-sm uppercase tracking-widest text-primary font-medium mb-4">
+          <p className="text-sm uppercase tracking-widest mb-4">
             WordPress & Next.js Specialist
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-            Hi, I&apos;m Marko Arnautovic.
-            <br />
-            I build blazing-fast websites that perform.
+          <h1 className="text-5xl font-extrabold mb-6 leading-tight">
+            Hi, I’m Marko Arnautovic.<br />
+            I build blazing‑fast websites.
           </h1>
-          <p className="text-lg text-muted-foreground mb-6">
-            With over 12 years of experience, I develop custom WordPress and Next.js solutions for serious businesses.
+          <p className="text-lg max-w-xl mb-8 opacity-90">
+            With over 12 years of experience, I specialize in headless WordPress,
+            custom plugins, and performance-driven Next.js sites.
           </p>
-          <Button size="lg" asChild>
-            <Link href="#services">Explore My Services</Link>
+          <Button size="lg" asChild className="shadow-lg">
+            <Link href="#services">
+              Explore Services <ArrowRight className="ml-2 inline" />
+            </Link>
           </Button>
         </div>
 
-        {/* Desna strana – slika */}
-        <div className="flex justify-center md:justify-end">
+        <motion.div
+          initial={{ scale: 0.8 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.6 }}
+          className="flex justify-center md:justify-end"
+        >
           <Image
             src="/markoarnautovic.png"
             alt="Marko Arnautovic"
             width={400}
             height={400}
-            className="dark:shadow-white/10"
+            className="rounded-full shadow-2xl"
             priority
           />
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </Container>
   </Section>
 );
 
-
-const AboutSection = () => (
-  <Section className="py-20 bg-background text-foreground">
+const About = () => (
+  <Section className="py-24 bg-white text-gray-800">
     <Container>
-      <div className="max-w-3xl mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-4">About Me</h2>
-        <p className="text-muted-foreground text-lg">
-          I&apos;m Marko Arnautovic, a WordPress developer with over 12 years of experience.
-          I specialize in headless WordPress, custom plugin development, and high-performance websites built with Next.js.
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="max-w-2xl mx-auto text-center space-y-4"
+      >
+        <h2 className="text-3xl font-bold">About Me</h2>
+        <p className="text-lg">
+          I’m a WordPress developer with 12+ years of experience in
+          headless architecture, custom plugin development, and performant
+          Next.js deployments.
         </p>
-      </div>
+      </motion.div>
     </Container>
   </Section>
 );
 
-const ServicesSection = () => (
-  <Section id="services" className="py-20 bg-muted/10 text-foreground">
+const Services = () => (
+  <Section id="services" className="py-24 bg-gray-50 text-gray-900">
     <Container>
       <h2 className="text-3xl font-bold text-center mb-12">My Services</h2>
       <div className="grid md:grid-cols-3 gap-8">
         {[
           "Custom WordPress Development",
           "Next.js Frontend Integration",
-          "Custom Plugin & API Development",
+          "Plugin & API Creation",
           "WooCommerce Solutions",
           "SEO Optimization",
-          "Website Maintenance & Support"
-        ].map((service, index) => (
-          <div
-            key={index}
-            className="p-6 bg-background rounded-2xl shadow hover:shadow-lg transition"
+          "Ongoing Maintenance"
+        ].map((svc) => (
+          <Card
+            key={svc}
+            asChild
+            className="hover:scale-105 transition-transform"
           >
-            <CheckCircle className="text-primary mb-4" size={32} />
-            <h3 className="text-xl font-semibold">{service}</h3>
-          </div>
+            <CardContent className="flex flex-col items-center p-6">
+              <CheckCircle size={36} className="text-blue-600 mb-4" />
+              <h3 className="text-xl font-semibold text-center">{svc}</h3>
+            </CardContent>
+          </Card>
         ))}
       </div>
     </Container>
   </Section>
 );
 
-const TestimonialsSection = () => (
-  <Section className="py-20 bg-background text-foreground">
+const Testimonials = () => (
+  <Section className="py-24 bg-white text-gray-800">
     <Container>
       <h2 className="text-3xl font-bold text-center mb-12">Testimonials</h2>
       <div className="grid md:grid-cols-3 gap-6">
         {[
-          {
-            name: "Sara J.",
-            quote: "Marko is an outstanding developer. Fast, precise, and professional.",
-          },
-          {
-            name: "Ivan D.",
-            quote: "We received a lightning-fast website with a modern layout. Highly recommended!",
-          },
-          {
-            name: "Anna L.",
-            quote: "Excellent communication, great quality, and quick delivery. Will work again!",
-          },
-        ].map((item, i) => (
-          <div
-            key={i}
-            className="bg-muted/10 rounded-xl p-6 shadow-sm hover:shadow-md transition"
+          { name: "Sara J.", quote: "Fast, precise, and professional." },
+          { name: "Ivan D.", quote: "Lightning-fast sites, modern layouts." },
+          { name: "Anna L.", quote: "Great communication and quality." }
+        ].map((t) => (
+          <motion.div
+            key={t.name}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
           >
-            <Quote className="mb-2 text-muted-foreground" />
-            <p className="italic mb-4">{item.quote}</p>
-            <p className="font-semibold">{item.name}</p>
-          </div>
+            <Card className="p-6 shadow-md">
+              <CardHeader>
+                <Quote className="text-gray-400" />
+              </CardHeader>
+              <CardContent>
+                <p className="italic mb-4">“{t.quote}”</p>
+                <p className="font-semibold text-right">— {t.name}</p>
+              </CardContent>
+            </Card>
+          </motion.div>
         ))}
       </div>
     </Container>
   </Section>
 );
 
-const CTASection = () => (
-  <Section className="py-24 bg-primary text-primary-foreground text-center">
+const CTA = () => (
+  <Section className="py-32 bg-blue-600 text-white text-center">
     <Container>
-      <h2 className="text-3xl md:text-4xl font-bold mb-4">
-        Let&apos;s build your next big project
-      </h2>
-      <p className="text-lg mb-6">
-        Contact me today to get started with a custom, high-performance website.
-      </p>
-      <Button variant="secondary" size="lg" asChild>
-        <Link href="/contact">Get in touch</Link>
-      </Button>
+      <motion.div
+        initial={{ scale: 0.9 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 0.6 }}
+        className="space-y-6"
+      >
+        <h2 className="text-4xl font-bold">
+          Let’s build your next big project
+        </h2>
+        <p className="text-lg max-w-xl mx-auto">
+          Reach out today for custom, high-performance web solutions.
+        </p>
+        <Button size="lg" asChild>
+          <Link href="/contact">Get in Touch</Link>
+        </Button>
+      </motion.div>
     </Container>
   </Section>
 );
