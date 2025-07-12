@@ -1,9 +1,19 @@
 import { Section, Container } from "@/components/craft";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle, Quote } from "lucide-react";
+import { ArrowRight, Quote } from "lucide-react";
 import Image from "next/image";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faWordpress,
+  faReact,
+} from "@fortawesome/free-brands-svg-icons";
+import {
+  faPlug,
+  faShoppingCart,
+  faSearch,
+  faLifeRing,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
   return (
