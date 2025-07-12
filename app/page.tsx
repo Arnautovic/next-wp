@@ -1,7 +1,7 @@
 import { Section, Container } from "@/components/craft";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Quote } from "lucide-react";
+import { ArrowRight, Quote, CheckCircle } from "lucide-react";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
