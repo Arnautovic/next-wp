@@ -3,171 +3,135 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle, Quote } from "lucide-react";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 export default function Home() {
   return (
     <>
-      <Hero />
-      <About />
-      <Services />
-      <Testimonials />
-      <CTA />
+      <HeroSection />
+      <AboutSection />
+      <ServicesSection />
+      <TestimonialsSection />
+      <CTASection />
     </>
   );
 }
 
-const Hero = () => (
-  <Section className="py-32 bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
+const HeroSection = () => (
+  <Section className="py-24 bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
     <Container>
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="grid md:grid-cols-[3fr_2fr] gap-12 items-center"
-      >
-        <div>
-          <p className="text-sm uppercase tracking-widest mb-4">
+      <div className="grid md:grid-cols-[3fr_2fr] gap-12 items-center">
+        {/* Leva strana – tekst */}
+        <div className="space-y-4">
+          <p className="text-sm uppercase tracking-widest font-medium opacity-80">
             WordPress & Next.js Specialist
           </p>
-          <h1 className="text-5xl font-extrabold mb-6 leading-tight">
-            Hi, I’m Marko Arnautovic.<br />
-            I build blazing‑fast websites.
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+            Hi, I&apos;m Marko Arnautovic.
+            <br />
+            I build blazing-fast websites that perform.
           </h1>
-          <p className="text-lg max-w-xl mb-8 opacity-90">
-            With over 12 years of experience, I specialize in headless WordPress,
-            custom plugins, and performance-driven Next.js sites.
+          <p className="text-lg opacity-90 max-w-xl">
+            With over 12 years of experience, I develop custom WordPress and Next.js solutions for businesses that demand excellence.
           </p>
-          <Button size="lg" asChild className="shadow-lg">
+          <Button size="lg" asChild className="inline-flex items-center bg-white text-blue-600 hover:bg-gray-100 transition">
             <Link href="#services">
-              Explore Services <ArrowRight className="ml-2 inline" />
+              Explore My Services
+              <ArrowRight className="ml-2" />
             </Link>
           </Button>
         </div>
 
-        <motion.div
-          initial={{ scale: 0.8 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 0.6 }}
-          className="flex justify-center md:justify-end"
-        >
+        {/* Desna strana – slika */}
+        <div className="flex justify-center md:justify-end">
           <Image
             src="/markoarnautovic.png"
             alt="Marko Arnautovic"
             width={400}
             height={400}
-            className="rounded-full shadow-2xl"
+            className="rounded-full shadow-lg"
             priority
           />
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </Container>
   </Section>
 );
 
-const About = () => (
-  <Section className="py-24 bg-white text-gray-800">
+const AboutSection = () => (
+  <Section className="py-20 bg-white text-gray-800">
     <Container>
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="max-w-2xl mx-auto text-center space-y-4"
-      >
+      <div className="max-w-3xl mx-auto text-center space-y-4">
         <h2 className="text-3xl font-bold">About Me</h2>
-        <p className="text-lg">
-          I’m a WordPress developer with 12+ years of experience in
-          headless architecture, custom plugin development, and performant
-          Next.js deployments.
+        <p className="text-lg opacity-90">
+          I&apos;m Marko Arnautovic, a WordPress developer with over 12 years of experience. I specialize in headless WordPress, custom plugin development, and high-performance Next.js sites.
         </p>
-      </motion.div>
+      </div>
     </Container>
   </Section>
 );
 
-const Services = () => (
-  <Section id="services" className="py-24 bg-gray-50 text-gray-900">
+const ServicesSection = () => (
+  <Section id="services" className="py-20 bg-gray-50 text-gray-900">
     <Container>
       <h2 className="text-3xl font-bold text-center mb-12">My Services</h2>
       <div className="grid md:grid-cols-3 gap-8">
         {[
           "Custom WordPress Development",
           "Next.js Frontend Integration",
-          "Plugin & API Creation",
+          "Custom Plugin & API Development",
           "WooCommerce Solutions",
           "SEO Optimization",
-          "Ongoing Maintenance"
-        ].map((svc) => (
-          <Card
-            key={svc}
-            asChild
-            className="hover:scale-105 transition-transform"
+          "Website Maintenance & Support"
+        ].map((service, index) => (
+          <div
+            key={index}
+            className="p-6 bg-white rounded-2xl shadow hover:shadow-lg hover:-translate-y-1 transform transition"
           >
-            <CardContent className="flex flex-col items-center p-6">
-              <CheckCircle size={36} className="text-blue-600 mb-4" />
-              <h3 className="text-xl font-semibold text-center">{svc}</h3>
-            </CardContent>
-          </Card>
+            <CheckCircle className="text-blue-600 mb-4" size={32} />
+            <h3 className="text-xl font-semibold">{service}</h3>
+          </div>
         ))}
       </div>
     </Container>
   </Section>
 );
 
-const Testimonials = () => (
-  <Section className="py-24 bg-white text-gray-800">
+const TestimonialsSection = () => (
+  <Section className="py-20 bg-white text-gray-800">
     <Container>
       <h2 className="text-3xl font-bold text-center mb-12">Testimonials</h2>
       <div className="grid md:grid-cols-3 gap-6">
         {[
-          { name: "Sara J.", quote: "Fast, precise, and professional." },
-          { name: "Ivan D.", quote: "Lightning-fast sites, modern layouts." },
-          { name: "Anna L.", quote: "Great communication and quality." }
-        ].map((t) => (
-          <motion.div
-            key={t.name}
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+          { name: "Sara J.", quote: "Marko is an outstanding developer. Fast, precise, and professional." },
+          { name: "Ivan D.", quote: "We received a lightning-fast website with a modern layout. Highly recommended!" },
+          { name: "Anna L.", quote: "Excellent communication, great quality, and quick delivery. Will work again!" }
+        ].map((item, i) => (
+          <div
+            key={i}
+            className="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition"
           >
-            <Card className="p-6 shadow-md">
-              <CardHeader>
-                <Quote className="text-gray-400" />
-              </CardHeader>
-              <CardContent>
-                <p className="italic mb-4">“{t.quote}”</p>
-                <p className="font-semibold text-right">— {t.name}</p>
-              </CardContent>
-            </Card>
-          </motion.div>
+            <Quote className="mb-2 opacity-60" />
+            <p className="italic mb-4">“{item.quote}”</p>
+            <p className="font-semibold text-right">— {item.name}</p>
+          </div>
         ))}
       </div>
     </Container>
   </Section>
 );
 
-const CTA = () => (
-  <Section className="py-32 bg-blue-600 text-white text-center">
+const CTASection = () => (
+  <Section className="py-24 bg-blue-600 text-white text-center">
     <Container>
-      <motion.div
-        initial={{ scale: 0.9 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 0.6 }}
-        className="space-y-6"
-      >
-        <h2 className="text-4xl font-bold">
-          Let’s build your next big project
-        </h2>
-        <p className="text-lg max-w-xl mx-auto">
-          Reach out today for custom, high-performance web solutions.
-        </p>
-        <Button size="lg" asChild>
-          <Link href="/contact">Get in Touch</Link>
-        </Button>
-      </motion.div>
+      <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        Let&apos;s build your next big project
+      </h2>
+      <p className="text-lg mb-6 opacity-90">
+        Contact me today to get started with a custom, high-performance website.
+      </p>
+      <Button variant="secondary" size="lg" asChild className="inline-flex items-center bg-white text-blue-600 hover:bg-gray-100 transition">
+        <Link href="/contact">Get in touch</Link>
+      </Button>
     </Container>
   </Section>
 );
